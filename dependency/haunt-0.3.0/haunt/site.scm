@@ -49,6 +49,7 @@
             site-readers
             site-builders
             site-publishers
+	    site-path
             site-post-slug
             build-site
             publish-site
