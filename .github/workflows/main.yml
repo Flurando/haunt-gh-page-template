@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Install Haunt
         run: |
-          sudo apt updatxe
+          sudo apt update
           sudo apt install guix
           guix install haunt
           GUIX_PROFILE="/home/runner/.guix-profile"
