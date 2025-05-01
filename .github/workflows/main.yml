@@ -14,24 +14,24 @@ jobs:
       - name: Install Dependency
         run: |
           sudo apt update
-          sudo apt install guile-3.0 guile-3.0-dev gperf build-essential autoconf automake make pkg-config
-          wget http://launchpadlibrarian.net/756818992/guile-commonmark_0.1.2+20240812-3_amd64.deb
-          sudo apt install ./guile-commonmark_0.1.2+20240812-3_amd64.deb
+          sudo apt install guile-3.0 guile-3.0-dev
 
       - name: Checkout
         uses: actions/checkout@master
         with:
           persist-credentials: false
 
-      - name: Install Guile Reader and Haunt
+      - name: Install Guile Commonmark and Haunt
         run: |
-          tar -xf haunt-0.3.0.tar.gz
-          cd haunt-0.3.0
+          sudo apt install ./dependency/guile-commonmark_0.1.2+20240812-3_amd64.deb
+          tar -xf ./dependency/haunt-0.3.0.tar.gz
+          cd ./dependency/haunt-0.3.0
           ./configure
           make
           sudo make install
           cd ../
-          rm -rf haunt-0.3.0/	  
+          rm -rf haunt-0.3.0/
+          cd ../
 
       - name: Build
         run: |

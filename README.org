@@ -12,3 +12,35 @@ well, I mainly copied and pasted stuff from [[https://github.com/PromyLOPh/guix-
 so thanks for the two authors' work!
 
 without them I would never be able to use haunt on github!
+
+* usage
+
+just fork or clone this repo
+
+then write your posts using common mark in post directory
+
+put the images in the image directory
+
+and you can configure the haunt.scm of course
+
+It now can publish to the projects github page automatically upon push
+
+of course you might need to wait for a while
+
+* todo
+
+- guile-reader
+
+  get guile-reader to work, so that we can use skribe
+
+  I am afraid that we might need a prebuild executable somehow
+
+  because configuring always complains that no scm_take_u8vector
+
+- better template
+
+  now it is just barebone with a valid github workflow action file
+
+  I wonder if somehow I can add some nice css guide here
+
+  but the problem is, I have 0 interest in frontend!
