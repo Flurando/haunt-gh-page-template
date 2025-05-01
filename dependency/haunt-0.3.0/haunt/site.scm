@@ -59,7 +59,7 @@
 
 (define-record-type <site>
   (make-site title domain scheme posts-directory file-filter build-directory
-             default-metadata make-slug readers builders publishers base-path)
+             default-metadata make-slug readers builders publishers basepath)
   site?
   (title site-title)
   (domain site-domain)
