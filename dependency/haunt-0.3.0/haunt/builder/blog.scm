@@ -183,14 +183,13 @@ several pages with up to POSTS-PER-PAGE posts on each page."
                (loop rest (+ n 1) i (cons item page)))))))
 
     (define collection-post-prefix
-      (string-append path
-		     (if prefix
-			 (if post-prefix
-			     (string-append prefix "/" post-prefix)
-			     prefix)
-			 (if post-prefix
-			     post-prefix
-			     ""))))
+      (if prefix
+	  (if post-prefix
+	      (string-append prefix "/" post-prefix)
+	      prefix)
+	  (if post-prefix
+	      post-prefix
+	      "")))
 
     (define collection->page
       (match-lambda
