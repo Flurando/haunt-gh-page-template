@@ -73,15 +73,15 @@
     (div ,(post-sxml post))))
 
 (define* (ugly-default-collection-template site title posts prefix)
-  (define* (post-uri post #:optional (path ""))
-    (string-append path (or prefix "") "/"
+  (define* (post-uri post)
+    (string-append (or prefix "") "/"
                    (site-post-slug site post) ".html"))
 
   `((h3 ,title)
     (ul
      ,@(map (lambda (post)
               `(li
-                (a (@ (href ,(post-uri post (site-path site))))
+                (a (@ (href ,(post-uri post)))
                    ,(post-ref post 'title)
                    " — "
                    ,(date->string* (post-date post)))))
