@@ -19,22 +19,21 @@ jobs:
           git clone https://git.launchpad.net/ubuntu/+source/guile-reader
           cd guile-reader
           ./configure && make && make install
-          cd ..
+	  
+      - name: Install Haunt
+        run: |
+          tar -xf /home/runner/Repo/haunt-0.3.0.tar.gz
+          cd /home/runner/Repo/haunt-0.3.0
+          ./configure
+          make
+          make install
+          cd ~
+          rm -rf /home/runner/Repo/haunt-0.3.0/
 
       - name: Checkout
         uses: actions/checkout@master
         with:
           persist-credentials: false
-
-      - name: Install haunt
-        run: |
-          tar -xf haunt-0.3.0.tar.gz
-          cd haunt-0.3.0
-          ./configure
-          make
-          make install
-          cd ../
-          rm -rf haunt-0.3.0/
 
       - name: Build
         run: |
