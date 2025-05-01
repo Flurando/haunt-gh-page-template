@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependency
         run: |
           sudo apt update
-	  sudo apt install guile guile-reader guile-commonmark
+          sudo apt install guile guile-reader guile-commonmark
 
       - name: Checkout
         uses: actions/checkout@master
@@ -27,7 +27,7 @@ jobs:
           ./configure
           make
           make install
-	  cd ../
+          cd ../
 
       - name: Build
         run: |
