@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Guix cache
         uses: actions/cache@v4
-    	with:
+        with:
           path: ~/.cache/guix
           key: ${{ runner.os }}-guix-cache-${{ github.sha }}
           restore-keys: |
