@@ -10,11 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install Haunt
-        run: |
-          sudo apt update
-          sudo apt install guix
-          guix install haunt
+      - name: Guix cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/guix
+          # use a key that (almost) never matches
+          key: guix-cache-${{ github.sha }}
+          restore-keys: |
+            guix-cache-
+      # Cannot use a cache for /gnu/store, since restore fails
+      - name: Install Guix
+        uses: PromyLOPh/guix-install-action@v1
+      - name: Ensure no locale warning
+        run: test -z "$(guix --version 2>&1 >/dev/null)"
       
       - name: Checkout
         uses: actions/checkout@master
@@ -23,10 +31,7 @@ jobs:
 
       - name: Build
         run: |
-          echo LANG=en_US.utf8 >> $GITHUB_ENV
-          GUIX_PROFILE="/home/runner/.guix-profile"
-          . "$GUIX_PROFILE/etc/profile"
-          haunt build
+          guix shell haunt -- haunt build
       
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
