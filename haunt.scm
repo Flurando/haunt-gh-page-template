@@ -16,5 +16,6 @@
       #:builders (list (blog #:prefix "/blogs")
                        (atom-feed)
                        (atom-feeds-by-tag)
-                       (static-directory "images")))
+                       (static-directory "images"))
+      #:path "haunt-gh-page-template/")
 
