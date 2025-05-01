@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Guix cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
     	with:
           path: ~/.cache/guix
-          key: guix-cache-${{ github.sha }}
+          key: ${{ runner.os }}-guix-cache-${{ github.sha }}
           restore-keys: |
             guix-cache-
       - name: Install Guix
