@@ -25,13 +25,13 @@ jobs:
         run: |
           sudo apt install ./dependency/guile-commonmark_0.1.2+20240812-3_amd64.deb
           mkdir haunt
-          cp -r ./dependency/haunt/* haunt/
-          cd haunt
+          cp -r ./dependency/haunt-0.3.0/* haunt-0.3.0/
+          cd haunt-0.3.0
           ./configure
           make
           sudo make install
           cd ../
-          rm -rf haunt/
+          rm -rf haunt-0.3.0/
 
       - name: Build
         run: |
