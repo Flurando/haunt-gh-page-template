@@ -18,18 +18,16 @@ jobs:
           sudo apt install ./guile-commonmark_0.1.2+20240812-3_amd64.deb
           git clone https://git.launchpad.net/ubuntu/+source/guile-reader
           cd guile-reader
-          automake --add-missing
           ./configure && make && make install
 
       - name: Install Haunt
         run: |
-          tar -xf /home/runner/Repo/haunt-0.3.0.tar.gz
-          cd /home/runner/Repo/haunt-0.3.0
+          cp /home/runner/Repo/haunt-0.3.0.tar.gz haunt-0.3.0.tar.gz
+          tar -xf haunt-0.3.0.tar.gz
+          cd haunt-0.3.0
           ./configure
           make
           make install
-          cd ~
-          rm -rf /home/runner/Repo/haunt-0.3.0/
 
       - name: Checkout
         uses: actions/checkout@master
