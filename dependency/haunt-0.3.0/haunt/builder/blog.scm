@@ -145,11 +145,11 @@ several pages with up to POSTS-PER-PAGE posts on each page."
     (string-append (or prefix "") (if prefix "/" "") base-name))
 
   (lambda (site posts)
-    (define path (site-path site))
     (define (post->page post)
-      (let ((base-name (string-append (if post-prefix
-                                          (string-append path post-prefix "/")
-                                          path)
+      (let ((base-name (string-append (site-path site)
+				      (if post-prefix
+                                          (string-append post-prefix "/")
+                                          "/")
                                       (site-post-slug site post)
                                       ".html"))
             (title (post-ref post 'title))
