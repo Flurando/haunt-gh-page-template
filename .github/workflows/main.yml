@@ -9,30 +9,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-steps:
-  - name: Guix cache
-    uses: actions/cache@v3
-    with:
-      path: ~/.cache/guix
-      key: guix-cache-${{ github.sha }}
-      restore-keys: |
-        guix-cache-
-  - name: Install Guix
-    uses: PromyLOPh/guix-install-action@v1
-    with:
-      pullAfterInstall: false
+    steps:
+      - name: Guix cache
+        uses: actions/cache@v3
+    	with:
+          path: ~/.cache/guix
+          key: guix-cache-${{ github.sha }}
+          restore-keys: |
+            guix-cache-
+      - name: Install Guix
+        uses: PromyLOPh/guix-install-action@v1
+        with:
+          pullAfterInstall: false
       
-  - name: Checkout
-    uses: actions/checkout@master
-    with:
-      persist-credentials: false
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          persist-credentials: false
 
-  - name: Build
-    run: |
-      guix shell haunt -- haunt build
+      - name: Build
+        run: |
+          guix shell haunt -- haunt build
       
-  - name: Deploy to GH Pages
-    uses: peaceiris/actions-gh-pages@v4
-    with:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      publish_dir: site
+      - name: Deploy to GH Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site
