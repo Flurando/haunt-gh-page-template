@@ -19,8 +19,8 @@ jobs:
           git clone https://git.launchpad.net/ubuntu/+source/guile-reader
           cd guile-reader
           ./configure
-	  make
-	  make install
+          make
+          make install
 
       - name: Install Haunt
         run: |
