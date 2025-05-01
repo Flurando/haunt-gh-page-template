@@ -3,9 +3,9 @@
 
 * status
 
-broken
+seem to work now
 
-need patch the haunt to make it support subpath
+but need more tests
 
 * what for
 
@@ -32,6 +32,12 @@ and you can configure the haunt.scm of course
 It now can publish to the projects github page automatically upon push
 
 of course you might need to wait for a while
+
+remember to change the basepath in haunt.scm to suit your need!
+
+note that if you are using the default github page like me
+
+type in absolute path as I do
 
 * todo
 
