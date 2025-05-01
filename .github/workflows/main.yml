@@ -28,7 +28,7 @@ jobs:
           cd haunt-0.3.0
           ./configure
           make
-          make install
+          sudo make install
           cd ../
           rm -rf haunt-0.3.0/	  
 
