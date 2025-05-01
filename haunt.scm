@@ -17,5 +17,5 @@
                        (atom-feed)
                        (atom-feeds-by-tag)
                        (static-directory "images"))
-      #:basepath "")
+      #:basepath "https://flurando.github.io/haunt-gh-page-template")
 
