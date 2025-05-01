@@ -22,7 +22,8 @@ jobs:
 
       - name: Build
         run: |
-          guix shell haunt -- haunt build
+          guix install haunt
+          haunt build
       
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
