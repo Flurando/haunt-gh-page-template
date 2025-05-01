@@ -185,11 +185,11 @@ several pages with up to POSTS-PER-PAGE posts on each page."
     (define collection-post-prefix
       (if prefix
           (if post-prefix
-              (string-append path prefix "/" post-prefix)
-              (string-append path prefix))
+              (string-append prefix "/" post-prefix)
+              prefix)
           (if post-prefix
-	      (string-append path post-prefix)
-	      path)))
+	      post-prefix
+	      "")))
 
     (define collection->page
       (match-lambda
