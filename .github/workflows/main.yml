@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Install Haunt
         run: |
-	  sudo apt update
-	  sudo apt install guix
-	  guix install haunt
+          sudo apt update
+          sudo apt install guix
+          guix install haunt
       
       - name: Checkout
         uses: actions/checkout@master
