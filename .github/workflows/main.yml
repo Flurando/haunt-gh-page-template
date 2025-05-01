@@ -10,17 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Guix cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/guix
-          key: ${{ runner.os }}-guix-cache-${{ github.sha }}
-          restore-keys: |
-            guix-cache-
-      - name: Install Guix
-        uses: PromyLOPh/guix-install-action@v1
-        with:
-          pullAfterInstall: false
+      - name: Install Haunt
+        run: |
+	  sudo apt update
+	  sudo apt install guix
+	  guix install haunt
       
       - name: Checkout
         uses: actions/checkout@master
@@ -29,7 +23,7 @@ jobs:
 
       - name: Build
         run: |
-          guix shell haunt -- haunt build
+          haunt build
       
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
