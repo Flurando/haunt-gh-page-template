@@ -24,7 +24,7 @@ jobs:
       - name: Install Guile Commonmark and Haunt
         run: |
           sudo apt install ./dependency/guile-commonmark_0.1.2+20240812-3_amd64.deb
-          mkdir haunt
+          mkdir haunt-0.3.0
           cp -r ./dependency/haunt-0.3.0/* haunt-0.3.0/
           cd haunt-0.3.0
           ./configure
