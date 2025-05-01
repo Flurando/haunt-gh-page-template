@@ -146,11 +146,11 @@ several pages with up to POSTS-PER-PAGE posts on each page."
 
   (lambda (site posts)
     (define (post->page post)
-      (let ((base-name (if post-prefix
-                           (string-append post-prefix "/")
-                           "/")
-                       (site-post-slug site post)
-                       ".html")
+      (let ((base-name (string-append (if post-prefix
+					  (string-append post-prefix "/")
+					  "/")
+				      (site-post-slug site post)
+				      ".html"))
             (title (post-ref post 'title))
             (body ((theme-post-template theme) post)))
         (serialized-artifact (make-file-name base-name)
