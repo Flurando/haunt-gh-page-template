@@ -13,7 +13,13 @@ jobs:
       - name: Install Dependency
         run: |
           sudo apt update
-          sudo apt install guile guile-reader guile-commonmark
+          sudo apt install guile-3.0
+          wget http://launchpadlibrarian.net/756818992/guile-commonmark_0.1.2+20240812-3_amd64.deb
+          sudo apt install ./guile-commonmark_0.1.2+20240812-3_amd64.deb
+          git clone https://git.launchpad.net/ubuntu/+source/guile-reader
+          cd guile-reader
+          ./configure && make && make install
+          cd ..
 
       - name: Checkout
         uses: actions/checkout@master
