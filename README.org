@@ -1,6 +1,12 @@
 #+TITLE: HAUNT GH PAGE TEMPLATE
 #+AUTHOR: me
 
+* status
+
+broken
+
+need patch the haunt to make it support subpath
+
 * what for
 
 this repo is my try-out on github pages using guile haunt
