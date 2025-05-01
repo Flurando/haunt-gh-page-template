@@ -1,0 +1,14 @@
+#+TITLE: HAUNT GH PAGE TEMPLATE
+#+AUTHOR: me
+
+* what for
+
+this repo is my try-out on github pages using guile haunt
+
+* how come
+
+well, I mainly copied and pasted stuff from [[https://github.com/PromyLOPh/guix-install-action][guix-install-action]] and [[https://gist.github.com/MichaelCurrin/a698731096f78240f653faf9a9127cba][how-to-deploy-to-github-pages-with-custom-workflow]]
+
+so thanks for the two authors' work!
+
+without them I would never be able to use haunt on github!
