@@ -16,7 +16,7 @@ jobs:
           sudo apt install guile-3.0 guile-3.0-dev gperf build-essential autoconf automake make
           wget http://launchpadlibrarian.net/756818992/guile-commonmark_0.1.2+20240812-3_amd64.deb
           sudo apt install ./guile-commonmark_0.1.2+20240812-3_amd64.deb
-          cp /home/runner/work/haunt-gh-page-template/haunt-gh-page-template/guile-reader-0.6.tar.gz guile-reader-0.6.tar.gz
+          cp /home/runner/work/haunt-gh-page-template/guile-reader-0.6.tar.gz guile-reader-0.6.tar.gz
           cd guile-reader-0.6
           ./configure
           make
@@ -24,7 +24,10 @@ jobs:
 
       - name: Install Haunt
         run: |
-          cp /home/runner/work/haunt-gh-page-template/haunt-gh-page-template/haunt-0.3.0.tar.gz haunt-0.3.0.tar.gz
+          echo "checking work dir"
+          ls /home/runner/work -al
+          echo "check"
+          cp /home/runner/work/haunt-gh-page-template/haunt-0.3.0.tar.gz haunt-0.3.0.tar.gz
           tar -xf haunt-0.3.0.tar.gz
           cd haunt-0.3.0
           ./configure
