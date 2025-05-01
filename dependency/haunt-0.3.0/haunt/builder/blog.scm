@@ -113,8 +113,8 @@
 (define (render-post theme site post)
   ((theme-post-template theme) post))
 
-(define* (render-collection theme site title posts prefix #:optional (path ""))
-  ((theme-collection-template theme) site title posts prefix path))
+(define (render-collection theme site title posts prefix)
+  ((theme-collection-template theme) site title posts prefix))
 
 (define (render-pagination theme site body previous-page next-page)
   ((theme-pagination-template theme) site body previous-page next-page))
