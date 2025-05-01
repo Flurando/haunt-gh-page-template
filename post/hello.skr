@@ -1,0 +1,9 @@
+(post
+ :title "Hello, World!"
+ :date (make-date* 2015 10 15)
+ :tags '("hi")
+
+ (h1 [Hello, World!])
+
+ (p [this file is copied from haunt project website]))
+
