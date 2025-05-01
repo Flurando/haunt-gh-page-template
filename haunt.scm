@@ -6,7 +6,7 @@
              (haunt site))
 
 (site #:title "Title"
-      #:domain "example.domain"
+      #:domain "flurando.github.io/haunt-gh-page-template"
       #:posts-directory "post"
       #:build-directory "site"
       #:default-metadata
