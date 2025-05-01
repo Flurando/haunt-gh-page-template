@@ -3,7 +3,6 @@
              (haunt builder atom)
              (haunt builder assets)
              (haunt reader commonmark)
-	     (haunt reader skribe)
              (haunt site))
 
 (site #:title "Title"
@@ -13,8 +12,7 @@
       #:default-metadata
       '((author . "Example")
         (email  . "123@nota.email"))
-      #:readers (list commonmark-reader
-		      skribe-reader)
+      #:readers (list commonmark-reader)
       #:builders (list (blog #:prefix "/blog")
                        (atom-feed)
                        (atom-feeds-by-tag)

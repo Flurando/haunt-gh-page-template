@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependency
         run: |
           sudo apt update
-          sudo apt install guile-3.0 guile-3.0-dev guile-2.2 guile-2.2-dev gperf build-essential autoconf automake make
+          sudo apt install guile-3.0 guile-3.0-dev gperf build-essential autoconf automake make pkg-config
           wget http://launchpadlibrarian.net/756818992/guile-commonmark_0.1.2+20240812-3_amd64.deb
           sudo apt install ./guile-commonmark_0.1.2+20240812-3_amd64.deb
 
@@ -24,21 +24,13 @@ jobs:
 
       - name: Install Guile Reader and Haunt
         run: |
-          pwd
-          tar -xf guile-reader-0.6.tar.gz
-          cd guile-reader-0.6
-          ./configure
-          make
-          make install
-          cd ../
           tar -xf haunt-0.3.0.tar.gz
           cd haunt-0.3.0
           ./configure
           make
           make install
           cd ../
-          rm -rf haunt-0.3.0/
-          rm -rf guile-reader-0.6/	  
+          rm -rf haunt-0.3.0/	  
 
       - name: Build
         run: |
