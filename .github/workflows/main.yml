@@ -13,7 +13,7 @@ jobs:
       - name: Install Dependency
         run: |
           sudo apt update
-          sudo apt install guile-3.0
+          sudo apt install guile-3.0 guile-3.0-dev gperf
           wget http://launchpadlibrarian.net/756818992/guile-commonmark_0.1.2+20240812-3_amd64.deb
           sudo apt install ./guile-commonmark_0.1.2+20240812-3_amd64.deb
           git clone https://git.launchpad.net/ubuntu/+source/guile-reader
@@ -34,14 +34,11 @@ jobs:
           make
           make install
           cd ../
+          rm -rf haunt-0.3.0/
 
       - name: Build
         run: |
           haunt build
-
-      - name: Clean
-        run: |
-          rm -rf haunt-0.3.0/
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
