@@ -10,15 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install Dependency
+        run: |
+          sudo apt update
+	  sudo apt install guile guile-reader guile-commonmark
+
       - name: Checkout
         uses: actions/checkout@master
         with:
           persist-credentials: false
-	  
+
       - name: Install haunt
         run: |
-          sudo apt update
-	  sudo apt install guile guile-reader guile-commonmark
           tar -xf haunt-0.3.0.tar.gz
           cd haunt-0.3.0
           ./configure
@@ -33,7 +36,7 @@ jobs:
       - name: Clean
         run: |
           rm -rf haunt-0.3.0/
-	  
+
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
