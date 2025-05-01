@@ -15,8 +15,6 @@ jobs:
           sudo apt update
           sudo apt install guix
           guix install haunt
-          GUIX_PROFILE="/home/runner/.guix-profile"
-          . "$GUIX_PROFILE/etc/profile" 
       
       - name: Checkout
         uses: actions/checkout@master
@@ -25,6 +23,8 @@ jobs:
 
       - name: Build
         run: |
+          GUIX_PROFILE="/home/runner/.guix-profile"
+          . "$GUIX_PROFILE/etc/profile"
           haunt build
       
       - name: Deploy to GH Pages
