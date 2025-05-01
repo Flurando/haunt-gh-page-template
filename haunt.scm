@@ -17,5 +17,5 @@
                        (atom-feed)
                        (atom-feeds-by-tag)
                        (static-directory "images"))
-      #:basepath "haunt-gh-page-template")
+      #:basepath "")
 
