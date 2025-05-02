@@ -13,7 +13,7 @@
       '((author . "Example")
         (email  . "123@nota.email"))
       #:readers (list commonmark-reader)
-      #:builders (list (blog #:prefix "/blogs")
+      #:builders (list (blog)
                        (atom-feed)
                        (atom-feeds-by-tag)
                        (static-directory "images"))
