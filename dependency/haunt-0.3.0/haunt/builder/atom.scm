@@ -143,7 +143,7 @@
               (build-uri (site-scheme site)
                          #:host (site-domain site)
                          #:path (string-append (site-basepath site)
-					       "/" blog-prefix "/"
+					       blog-prefix "/"
                                                (site-post-slug site post)
                                                ".html")))))
     `(entry
@@ -194,7 +194,8 @@ the blog's prefix and post prefix."
     (let ((uri (uri->string
                 (build-uri (site-scheme site)
                            #:host (site-domain site)
-                           #:path (string-append "/" file-name)))))
+                           #:path (string-append (site-basepath site)
+						 "/" file-name)))))
       (serialized-artifact file-name
                            `(feed (@ (xmlns "http://www.w3.org/2005/Atom"))
                                   (title ,(site-title site))
