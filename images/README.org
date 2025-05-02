@@ -1,1 +1,4 @@
 put your images in this folder
+
+the example image is fetched with https://picsum.photos/200
+so the credit remains theirs, if any
