@@ -142,7 +142,7 @@
   (let ((uri (uri->string
               (build-uri (site-scheme site)
                          #:host (site-domain site)
-                         #:path (string-append (site-basepath)
+                         #:path (string-append (site-basepath site)
 					       "/" blog-prefix "/"
                                                (site-post-slug site post)
                                                ".html")))))
