@@ -20,4 +20,4 @@ I decide to leave this [solution](https://github.com/Flurando/haunt-gh-page-temp
 
 so you are welcomed to use it, at your free will
 
-![a random image from picsum.photos website](image/example.jpeg)
+![a random image from picsum.photos website](images/example.jpeg)
