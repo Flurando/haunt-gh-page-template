@@ -81,7 +81,9 @@
     (ul
      ,@(map (lambda (post)
               `(li
-                (a (@ (href ,(string-append (site-basepath site)
+                (a (@ (href ,(string-append "https://"
+					    (site-domain site)
+					    (site-basepath site)
 					    (post-uri post))))
                    ,(post-ref post 'title)
                    " — "

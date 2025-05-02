@@ -6,7 +6,7 @@
              (haunt site))
 
 (site #:title "Title"
-      #:domain "flurando.github.io/haunt-gh-page-template"
+      #:domain "flurando.github.io"
       #:posts-directory "post"
       #:build-directory "site"
       #:default-metadata
@@ -17,5 +17,5 @@
                        (atom-feed)
                        (atom-feeds-by-tag)
                        (static-directory "images"))
-      #:basepath "https://flurando.github.io/haunt-gh-page-template")
+      #:basepath "/haunt-gh-page-template")
 
